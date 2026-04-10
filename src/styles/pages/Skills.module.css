@@ -1,0 +1,114 @@
+.skillsPage {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: var(--shadow-1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.pageHeader {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--jet);
+}
+
+.pageTitle {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-600);
+  color: var(--white-1);
+  text-transform: capitalize;
+}
+
+.skillsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.skillCategory {
+  border-left: 3px solid var(--orange-yellow-crayola);
+  padding-left: 20px;
+}
+
+.categoryTitle {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-600);
+  color: var(--orange-yellow-crayola);
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skillTag {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: var(--border-gradient-onyx);
+  border: 1px solid var(--orange-yellow-crayola);
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-500);
+  cursor: pointer;
+  transition: all var(--transition-1);
+  position: relative;
+}
+
+.skillTag::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.skillTag:hover {
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+  box-shadow: var(--shadow-2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .skillsPage {
+    padding: 20px;
+  }
+
+  .pageTitle {
+    font-size: var(--fs-2);
+  }
+
+  .skillCategory {
+    padding-left: 15px;
+    border-left-width: 2px;
+  }
+
+  .categoryTitle {
+    font-size: var(--fs-3);
+  }
+
+  .skillTag {
+    padding: 8px 16px;
+    font-size: var(--fs-6);
+  }
+
+  .skillsList {
+    gap: 10px;
+  }
+}

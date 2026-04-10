@@ -1,0 +1,227 @@
+.contactPage {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: var(--shadow-1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.pageHeader {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--jet);
+}
+
+.pageTitle {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-600);
+  color: var(--white-1);
+  text-transform: capitalize;
+}
+
+.contactContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Contact Info Section */
+.contactInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.infoCard {
+  background: var(--border-gradient-onyx);
+  border: 1px solid var(--jet);
+  border-radius: 12px;
+  padding: 25px;
+  transition: all var(--transition-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.infoCard::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: 12px;
+  z-index: -1;
+}
+
+.infoCard:hover {
+  border-color: var(--orange-yellow-crayola);
+  box-shadow: var(--shadow-2);
+  transform: translateY(-5px);
+}
+
+.infoCard h3 {
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  color: var(--orange-yellow-crayola);
+  margin: 0 0 10px 0;
+}
+
+.contactLink {
+  font-size: var(--fs-5);
+  font-weight: var(--fw-400);
+  color: var(--light-gray-70);
+  transition: color var(--transition-1);
+}
+
+.contactLink:hover {
+  color: var(--orange-yellow-crayola);
+}
+
+/* Contact Form Section */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  color: var(--white-1);
+  text-transform: capitalize;
+}
+
+.input,
+.textarea {
+  background: var(--border-gradient-onyx);
+  border: 1px solid var(--jet);
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: var(--fs-5);
+  color: var(--white-1);
+  font-family: var(--ff-poppins);
+  transition: all var(--transition-1);
+  position: relative;
+  z-index: 0;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--light-gray-70);
+  opacity: 0.7;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--orange-yellow-crayola);
+  background: var(--bg-gradient-jet);
+  box-shadow: 0 0 10px rgba(255, 207, 0, 0.2);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.formStatus {
+  padding: 15px;
+  border-radius: 8px;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  border-left: 3px solid;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+.formStatus.success {
+  background: rgba(124, 179, 66, 0.1);
+  border-color: #7cb342;
+  color: #7cb342;
+}
+
+.formStatus.error {
+  background: rgba(227, 77, 38, 0.1);
+  border-color: #e34d26;
+  color: #e34d26;
+}
+
+.submitBtn {
+  padding: 15px 30px;
+  border-radius: 8px;
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-1);
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--white-1);
+  box-shadow: var(--shadow-3);
+  transform: translateY(-3px);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .contactPage {
+    padding: 20px;
+  }
+
+  .pageTitle {
+    font-size: var(--fs-2);
+  }
+
+  .contactInfo {
+    grid-template-columns: 1fr;
+  }
+
+  .infoCard {
+    padding: 20px;
+  }
+
+  .input,
+  .textarea {
+    font-size: var(--fs-6);
+  }
+
+  .submitBtn {
+    padding: 12px 24px;
+    font-size: var(--fs-6);
+  }
+}
